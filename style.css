@@ -1,0 +1,256 @@
+* {
+    background-color: rgb(53, 46, 46);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Navbar */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Add hover effect */
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Underline animation */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #007bff;
+    transition: width 0.3s ease-in-out;
+    bottom: 0;
+    left: 0;
+}
+
+/* Hover underline expansion */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#home {
+    background: url('download.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #1a1e21;
+    padding: 10px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1.2s forwards ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1.5s forwards ease-in-out;
+}
+
+/* Add animation for button */
+.hero-content .btn {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1.8s forwards ease-in-out;
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Me */
+#about, #projects, #skills, #contact {
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgb(63, 72, 87);
+    margin-top: 20px;
+}
+
+/* Projects */
+.project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Project Section */
+.project {
+    background: #000508;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgb(3, 36, 83);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scale and shadow on hover */
+.project:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(4, 91, 115, 0.158);
+}
+
+/* Project link hover effect */
+.project a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project a:hover {
+    color: #0056b3;
+}
+
+/* Skills */
+#skills ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Skills Section */
+#skills ul li {
+    margin: 15px;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards;
+}
+
+/* Stagger the animation for each skill */
+#skills ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+#skills ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+#skills ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+#skills ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+#skills ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+#skills ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Contact Form */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effect */
+form input:focus, form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Button hover effect */
+form button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .project-list {
+        flex-direction: column;
+    }
+
+    #skills ul {
+        flex-direction: column;
+    }
+}
